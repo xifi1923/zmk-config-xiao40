@@ -1,0 +1,8 @@
+file_format: "1"
+id: xiao40
+name: Xiao40
+type: shield
+url: 
+requires: [seeed_xiao]
+features:
+  - keys

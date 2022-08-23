@@ -1,0 +1,12 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_XIAO40
+
+config ZMK_KEYBOARD_NAME
+    default "Xiao40"
+
+config SPI
+    default y
+
+endif
