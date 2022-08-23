@@ -41,7 +41,7 @@ jobs:
         run: west build -s zmk/app -b seeeduino_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=xiao40
       - name: Xiao40 .config
         if: ${{ always() }}
-        run: cat -n build/zaphod/zephyr/.config
+        run: cat -n build/zephyr/.config
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 xiao40-firmware.uf2
       - name: Archive
