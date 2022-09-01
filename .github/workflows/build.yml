@@ -38,8 +38,8 @@ jobs:
       - name: List modules (west list)
         run: west list
       - name: Copy file
-          uses: canastro/copy-action@0.0.2
-          with:
+        uses: canastro/copy-action@0.0.2
+        with:
           source: config/xiao40.keymap
           target: boards/shields/xiao40.keymap  
       - name: Build Xiao40 (west build)
