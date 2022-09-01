@@ -37,6 +37,8 @@ jobs:
         run: west zephyr-export
       - name: List modules (west list)
         run: west list
+      - name: Copy ZMK Keymap Editor .keymap
+        run: cp ${GITHUB_WORKSPACE}/config/xiao40.keymap ${GITHUB_WORKSPACE}/boards/shields/xiao40/xiao40.keymap
       - name: Build Xiao40 (west build)
         run: west build -s zmk/app -b seeeduino_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=xiao40
       - name: Xiao40 .config
