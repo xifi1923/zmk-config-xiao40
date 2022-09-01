@@ -40,8 +40,8 @@ jobs:
       - name: Copy file
         uses: canastro/copy-action@0.0.2
         with:
-          source: config/xiao40.keymap
-          target: boards/shields/xiao40.keymap  
+          source: /config/xiao40.keymap
+          target: /boards/shields/xiao40.keymap  
       - name: Build Xiao40 (west build)
         run: west build -s zmk/app -b seeeduino_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=xiao40
       - name: Xiao40 .config
