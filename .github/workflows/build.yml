@@ -7,12 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
-    name: Build Test
+    name: Build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: config/
       - name: Cache west modules
         uses: actions/cache@v2
         env:
@@ -37,6 +35,8 @@ jobs:
         run: west zephyr-export
       - name: List modules (west list)
         run: west list
+      - name: Copy common keymap to Andrea folders
+        run: cp ${GITHUB_WORKSPACE}/config/xiao40.keymap ${GITHUB_WORKSPACE}/config/boards/shields/xiao40/xiao40.keymap
       - name: Build Xiao40 (west build)
         run: west build -s zmk/app -b seeeduino_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=xiao40
       - name: Xiao40 .config
